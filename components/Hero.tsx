@@ -33,13 +33,14 @@ export const Hero = () => {
         
         <div className="space-y-4 px-6 max-w-4xl mx-auto flex flex-col items-center">
             
-            {/* Logo Lockup Style - Side by Side Serif */}
-            <div className="flex items-center justify-center gap-3 md:gap-5 transform hover:scale-105 transition-transform duration-700 ease-out py-6">
-                {/* Passage en font-serif et italic pour le style demandé */}
-                <h1 className="font-serif italic text-6xl md:text-9xl text-stone-900 tracking-tighter drop-shadow-xl z-10 relative">
+            {/* Logo Lockup Style - Side by Side */}
+            <div className="flex items-center justify-center gap-3 md:gap-5 transform hover:scale-105 transition-transform duration-700 ease-out py-8">
+                {/* Application de la font-logo (Pirata One) avec l'effet lame (étirement vertical + gradient) */}
+                {/* Suppression de text-stone-900 pour laisser voir le gradient */}
+                <h1 className="font-logo text-blade-effect text-7xl md:text-[9rem] leading-none z-10 relative px-4 py-2">
                     Shelley Nails
                 </h1>
-                <Heart className="w-4 h-4 md:w-8 md:h-8 fill-stone-900 text-stone-900 animate-pulse" strokeWidth={0} />
+                <Heart className="w-4 h-4 md:w-8 md:h-8 fill-stone-900 text-stone-900 animate-pulse mt-4 md:mt-8" strokeWidth={0} />
             </div>
 
             <div className="font-serif italic text-lg md:text-2xl text-stone-800 font-medium tracking-wide mt-8 md:mt-12 leading-relaxed">

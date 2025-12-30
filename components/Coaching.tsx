@@ -275,7 +275,7 @@ export const Coaching = () => {
                 )}
 
                 {/* Bottom Signature */}
-                <div className="mt-8 opacity-30 font-gothic text-xl text-charcoal">
+                <div className="mt-8 opacity-80 font-logo text-blade-effect text-3xl">
                     Shelley Nails Academy
                 </div>
             </div>
