@@ -1,13 +1,23 @@
 import { ServiceCategory } from './types';
 
-// Images mises à jour via Unsplash car le lien GitHub précédent est inactif.
+// Base URL pour récupérer les images brutes (Raw) depuis le dépôt GitHub.
+// Note : Le dépôt DOIT être PUBLIC pour que cela fonctionne.
+const BASE_IMAGE_URL = "https://raw.githubusercontent.com/bassova69-prog/image/main";
+
+// Fonction utilitaire pour ajouter un timestamp et éviter le cache agressif de GitHub
+const getAssetUrl = (filename: string) => `${BASE_IMAGE_URL}/${filename}?v=${new Date().getDate()}`;
+
 export const ASSETS = {
-  // Image de fond (Texture marbre/béton doux)
-  BACKGROUND: "https://images.unsplash.com/photo-1596704017235-d96354431871?q=80&w=2500&auto=format&fit=crop", 
-  LOGO_PLACEHOLDER: "https://images.unsplash.com/photo-1522337360705-8763d39a820c?q=80&w=2670&auto=format&fit=crop",
-  PROFILE_PIC: "https://images.unsplash.com/photo-1632324343640-86af9827dbe9?q=80&w=1000&auto=format&fit=crop", 
-  // Logo (Image abstraite stylée pour remplacer le logo manquant)
-  LOGO_URL: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=500&auto=format&fit=crop"
+  // Mise à jour vers fond.png
+  BACKGROUND: getAssetUrl('fond.png'), 
+  
+  // Nom exact attendu : logo.png
+  LOGO_URL: getAssetUrl('logo.png'),
+  
+  // Nom exact attendu : profile.jpg
+  PROFILE_PIC: getAssetUrl('profile.jpg'),
+  
+  LOGO_PLACEHOLDER: getAssetUrl('logo.png'),
 };
 
 export const SOCIAL_LINKS = {
@@ -63,14 +73,15 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     }
 ];
 
+// Mise à jour : les images s'appellent port1.png, port2.png, etc.
 export const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1632324343640-86af9827dbe9?q=80&w=800&auto=format&fit=crop", // Pink Art
-  "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop", // Green Edgy
-  "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop", // Pastel
-  "https://images.unsplash.com/photo-1595867165380-0a37941789c6?q=80&w=800&auto=format&fit=crop", // Hands
-  "https://images.unsplash.com/photo-1519017715179-c699f15a9843?q=80&w=800&auto=format&fit=crop", // Sparkle
-  "https://images.unsplash.com/photo-1629213508492-36916a04e5d3?q=80&w=800&auto=format&fit=crop", // Detail
-  "https://images.unsplash.com/photo-1599695655589-4b6842777f98?q=80&w=800&auto=format&fit=crop", // Abstract
+  getAssetUrl('port1.png'),
+  getAssetUrl('port2.png'),
+  getAssetUrl('port3.png'),
+  getAssetUrl('port4.png'),
+  getAssetUrl('port5.png'),
+  getAssetUrl('port6.png'),
+  getAssetUrl('port7.png'),
 ];
 
 export const NAV_LINKS = [

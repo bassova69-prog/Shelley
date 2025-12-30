@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, ArrowRight } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 const TribalBackground = () => (
@@ -43,7 +43,7 @@ export const Hero = () => {
             </div>
 
             <p className="font-serif italic text-xl md:text-2xl text-stone-800 font-medium tracking-wide mt-8 md:mt-12">
-                Nail Artist & Formatrice | Paris
+                Nail Artist & Coach | Paris & Créteil
             </p>
 
             <p className="font-sans text-sm md:text-base text-stone-700 mt-6 max-w-2xl mx-auto leading-relaxed opacity-90 px-4">
@@ -51,16 +51,6 @@ export const Hero = () => {
             </p>
 
             <div className="w-12 h-0.5 bg-stone-900/20 mx-auto mt-8 mb-8"></div>
-
-            {/* CTA Button */}
-            <a 
-              href={SOCIAL_LINKS.BOOKING} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-charcoal text-greige text-xs uppercase tracking-[0.2em] font-medium hover:bg-black transition-all hover:scale-105 shadow-xl shadow-charcoal/20"
-            >
-              Réserver maintenant <ArrowRight size={14} />
-            </a>
 
         </div>
 

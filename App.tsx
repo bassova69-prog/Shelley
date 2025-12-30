@@ -11,7 +11,7 @@ import { ASSETS } from './constants';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-greige text-charcoal font-sans relative selection:bg-charcoal selection:text-white">
+    <div className="min-h-screen text-charcoal font-sans relative selection:bg-charcoal selection:text-white">
       {/* Background Image Layer */}
       <div 
         className="fixed inset-0 z-0 pointer-events-none"
@@ -20,8 +20,8 @@ const App = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            // Opacity légèrement réduite pour assurer la lisibilité du texte si nécessaire
-            opacity: 1
+            // Fallback color si l'image ne charge pas
+            backgroundColor: '#D6D3CD'
         }}
       />
       
