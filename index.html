@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -20,8 +20,8 @@
               'silver': '#C0C0C0',
             },
             fontFamily: {
-              'gothic': ['"UnifrakturMaguntia"', 'cursive'],
-              'sans': ['"Playfair Display"', 'serif'], /* On remplace la sans-serif par défaut par du Serif */
+              'gothic': ['"Playfair Display"', 'serif'], /* Gothique remplacé par Serif */
+              'sans': ['"Playfair Display"', 'serif'], 
               'serif': ['"Playfair Display"', 'serif'],
             },
             backgroundImage: {
@@ -69,9 +69,9 @@
         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
       }
 
-      /* Effet lame : étire la police gothique */
+      /* Effet lame : adapté pour Serif (moins extrême) */
       .font-blade {
-        transform: scaleY(1.8); /* Plus étiré pour effet lame */
+        /* transform: scaleY(1.8); Retiré pour éviter la distorsion sur le serif */
         letter-spacing: 0.05em;
         display: inline-block;
         transform-origin: center;
