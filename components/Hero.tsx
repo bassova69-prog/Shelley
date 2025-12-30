@@ -42,9 +42,10 @@ export const Hero = () => {
                 <Heart className="w-4 h-4 md:w-8 md:h-8 fill-stone-900 text-stone-900 animate-pulse" strokeWidth={0} />
             </div>
 
-            <p className="font-serif italic text-xl md:text-2xl text-stone-800 font-medium tracking-wide mt-8 md:mt-12">
-                Nail Artist & Coach | Paris & Créteil
-            </p>
+            <div className="font-serif italic text-lg md:text-2xl text-stone-800 font-medium tracking-wide mt-8 md:mt-12 leading-relaxed">
+                <p>Nail Artist & Coach.</p>
+                <p className="mt-2 text-stone-700">Spécialiste de la pose de gel et du Nail Art à domicile sur Créteil et Paris Sud.</p>
+            </div>
 
             <p className="font-sans text-sm md:text-base text-stone-700 mt-6 max-w-2xl mx-auto leading-relaxed opacity-90 px-4">
                 L’expertise et la créativité au bout de vos doigts. Depuis plusieurs années, je vous accompagne pour sublimer vos mains avec passion. De la pose classique au Nail Art le plus sophistiqué, je mise sur des finitions parfaites et un accueil personnalisé. Ma spécialité : la pose américaine et les designs tendances.
