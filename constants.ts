@@ -89,5 +89,6 @@ export const NAV_LINKS = [
   { name: 'Tarifs', href: '#services' },
   { name: 'Coaching', href: '#coaching' },
   { name: 'Collab', href: '#collaboration' },
+  { name: 'FAQ', href: '#faq' },
   { name: 'Galerie', href: '#gallery' },
 ];
