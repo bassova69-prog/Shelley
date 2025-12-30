@@ -99,9 +99,7 @@ export const Coaching = () => {
                 </h3>
 
                 <p className="font-sans text-sm md:text-base max-w-lg mx-auto text-charcoal/70 leading-relaxed mb-10">
-                   Plonge dans l'univers du <span className="font-bold text-charcoal">Nail Art</span>. 
-                   J'analyse ta technique, corrige tes gestes et t'apprends mes designs signature.
-                   Un moment privilégié pour développer ton propre style.
+                   Plonge dans l'univers du <span className="font-bold text-charcoal">Nail Art</span> avec mes sessions de coaching personnalisé à Créteil (ou en ligne). J'analyse ta technique de pose de gel, corrige tes gestes de prothésiste ongulaire et t'apprends mes designs signature et techniques de décoration avancées. Un moment privilégié pour perfectionner ton savoir-faire et développer ton propre style professionnel.
                 </p>
 
                 {/* Modules Grid */}
@@ -257,7 +255,7 @@ export const Coaching = () => {
                                 </div>
 
                                 <button 
-                                    type="submit"
+                                    type="submit" 
                                     disabled={status === 'submitting'}
                                     className="w-full bg-charcoal text-white font-medium py-3 rounded-lg hover:bg-black transition-colors flex items-center justify-center gap-2 uppercase tracking-wider text-xs mt-2 disabled:opacity-70"
                                 >

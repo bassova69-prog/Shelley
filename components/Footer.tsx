@@ -12,7 +12,7 @@ export const Footer = () => {
             <a href="mailto:contact@shelleynails.com" className="hover:opacity-50 transition-opacity uppercase tracking-wider">Email</a>
         </div>
         <p className="text-[10px] uppercase tracking-widest opacity-40">
-          © {new Date().getFullYear()} Shelley Nails • Paris • v1.0.20
+          © {new Date().getFullYear()} Shelley Nails • Paris • v1.0.21
         </p>
       </div>
     </footer>
