@@ -1,0 +1,19 @@
+{
+  "name": "shelleynails-website",
+  "version": "1.0.8",
+  "description": "Portfolio exclusif de nail art pour Shelley Nails",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bassova69-prog/Shelleynails.git"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "lucide-react": "^0.562.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
