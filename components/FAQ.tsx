@@ -81,7 +81,7 @@ export const FAQ: React.FC = () => {
                     <div className="px-8 mt-6 text-center">
                         <p className="text-[10px] text-stone-400 uppercase tracking-widest font-bold">Une autre question ?</p>
                         <a 
-                            href="https://ig.me/m/shel" 
+                            href="https://www.instagram.com/direct/t/109840043746601/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="inline-block mt-2 text-[#D4A373] font-serif italic hover:underline font-medium"

@@ -21,9 +21,9 @@ export const ASSETS = {
 };
 
 export const SOCIAL_LINKS = {
-  INSTAGRAM: "https://www.instagram.com/shel",
+  INSTAGRAM: "https://www.instagram.com/shelleynailss/",
   TIKTOK: "https://www.tiktok.com/@shel",
-  BOOKING: "https://www.instagram.com/shel" 
+  BOOKING: "https://www.instagram.com/direct/t/109840043746601/" 
 };
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
@@ -60,7 +60,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
             { 
                 name: 'Contact & Inspiration', 
                 details: "Merci de me contacter par message pour choisir la prestation adaptée à tes besoins. Prévoir des photos d'inspiration !",
-                action: { label: 'Message Instagram', link: 'https://ig.me/m/shel' }
+                action: { label: 'Message Instagram', link: 'https://www.instagram.com/direct/t/109840043746601/' }
             },
         ]
     },
