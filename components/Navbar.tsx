@@ -89,35 +89,42 @@ export const Navbar = () => {
         {/* Mobile Menu Button - Reste à droite grâce au justify-end */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-charcoal hover:opacity-70 transition-colors"
+          className="md:hidden text-charcoal hover:opacity-70 transition-colors p-2"
+          aria-label="Menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Nav */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-greige border-b border-charcoal/10 transition-all duration-300 overflow-hidden ${
-        isOpen ? 'max-h-96 opacity-100 shadow-xl' : 'max-h-0 opacity-0'
+      <div className={`md:hidden absolute top-full left-0 w-full bg-greige border-b border-charcoal/10 transition-all duration-500 ease-in-out ${
+        isOpen ? 'max-h-[85vh] opacity-100 shadow-xl overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'
       }`}>
-        <div className="flex flex-col items-center py-10 space-y-8 bg-greige/95 backdrop-blur">
+        {/* Espacements réduits (py-8 et space-y-6) pour que tout rentre sur l'écran */}
+        <div className="flex flex-col items-center py-8 space-y-6 bg-greige/95 backdrop-blur min-h-[50vh]">
           {NAV_LINKS.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="font-gothic text-3xl text-charcoal hover:text-charcoal/60 transition-colors cursor-pointer tracking-widest"
+              className="font-gothic text-3xl text-charcoal hover:text-charcoal/60 transition-colors cursor-pointer tracking-widest active:scale-95 transform duration-150"
             >
               {link.name}
             </a>
           ))}
-          <div className="flex items-center gap-6 pt-4">
-              <a href={SOCIAL_LINKS.INSTAGRAM} className="text-charcoal"><Instagram size={24} /></a>
-              <a href={SOCIAL_LINKS.TIKTOK} className="text-charcoal">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          
+          {/* Ligne de séparation */}
+          <div className="w-12 h-px bg-charcoal/20 my-2"></div>
+
+          {/* Icones Réseaux Sociaux */}
+          <div className="flex items-center gap-8 pt-2 pb-6">
+              <a href={SOCIAL_LINKS.INSTAGRAM} className="text-charcoal hover:text-charcoal/60 transition-colors p-2"><Instagram size={28} /></a>
+              <a href={SOCIAL_LINKS.TIKTOK} className="text-charcoal hover:text-charcoal/60 transition-colors p-2">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                 </svg>
               </a>
-              <a href={SOCIAL_LINKS.REVIEWS} className="text-charcoal" title="Laisser un avis"><Star size={24} /></a>
+              <a href={SOCIAL_LINKS.REVIEWS} className="text-charcoal hover:text-charcoal/60 transition-colors p-2" title="Laisser un avis"><Star size={28} /></a>
           </div>
         </div>
       </div>
