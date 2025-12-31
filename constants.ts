@@ -1,26 +1,26 @@
 import { ServiceCategory } from './types';
 
 // Base URL pour récupérer les images brutes (Raw) depuis le dépôt GitHub.
-// Note : Le dépôt DOIT être PUBLIC pour que cela fonctionne.
 const BASE_IMAGE_URL = "https://raw.githubusercontent.com/bassova69-prog/image/main";
 
-// Fonction utilitaire pour ajouter un timestamp et éviter le cache agressif de GitHub
-const getAssetUrl = (filename: string) => `${BASE_IMAGE_URL}/${filename}?v=${new Date().getDate()}`;
+// Fonction utilitaire pour générer les URLs
+// Utilisation de .getTime() pour garantir que les nouvelles images s'affichent immédiatement sans cache navigateur obsolète
+const getAssetUrl = (filename: string) => `${BASE_IMAGE_URL}/${filename}?v=${new Date().getTime()}`;
 
 export const ASSETS = {
-  // Image de fond définie sur fond.png
-  BACKGROUND: getAssetUrl('fond.png'), 
+  // Image de fond
+  BACKGROUND: getAssetUrl('fond.webp'), 
   
-  // Nom exact attendu : logo.png
-  LOGO_URL: getAssetUrl('logo.png'),
+  // Logo
+  LOGO_URL: getAssetUrl('logo.webp'),
   
-  // Nom exact attendu : profile.jpg
-  PROFILE_PIC: getAssetUrl('profile.jpg'),
+  // Photo de profil (si utilisée)
+  PROFILE_PIC: getAssetUrl('profile.webp'),
   
-  LOGO_PLACEHOLDER: getAssetUrl('logo.png'),
+  LOGO_PLACEHOLDER: getAssetUrl('logo.webp'),
 
   // Programme Coaching
-  PROGRAM: getAssetUrl('programme.png'),
+  PROGRAM: getAssetUrl('programme.webp'),
 };
 
 export const SOCIAL_LINKS = {
@@ -76,14 +76,13 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     }
 ];
 
-// Mise à jour : les images s'appellent port1.png, port2.png, etc.
 export const GALLERY_IMAGES = [
-  getAssetUrl('port1.png'),
-  getAssetUrl('port2.png'),
-  getAssetUrl('port3.png'),
-  getAssetUrl('port4.png'),
-  getAssetUrl('port5.png'),
-  getAssetUrl('port6.png'),
+  getAssetUrl('port1.webp'),
+  getAssetUrl('port2.webp'),
+  getAssetUrl('port3.webp'),
+  getAssetUrl('port4.webp'),
+  getAssetUrl('port5.webp'),
+  getAssetUrl('port6.webp'),
 ];
 
 export const NAV_LINKS = [
