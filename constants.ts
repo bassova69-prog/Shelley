@@ -8,7 +8,7 @@ const BASE_IMAGE_URL = "https://raw.githubusercontent.com/bassova69-prog/image/m
 const getAssetUrl = (filename: string) => `${BASE_IMAGE_URL}/${filename}?v=${new Date().getDate()}`;
 
 export const ASSETS = {
-  // Mise à jour vers fond.png
+  // Image de fond définie sur fond.png
   BACKGROUND: getAssetUrl('fond.png'), 
   
   // Nom exact attendu : logo.png
@@ -18,6 +18,9 @@ export const ASSETS = {
   PROFILE_PIC: getAssetUrl('profile.jpg'),
   
   LOGO_PLACEHOLDER: getAssetUrl('logo.png'),
+
+  // Programme Coaching
+  PROGRAM: getAssetUrl('programme.png'),
 };
 
 export const SOCIAL_LINKS = {
@@ -68,7 +71,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         category: 'Règles du Salon', 
         type: 'info', 
         items: [
-            { name: 'Annulation & Retard', details: "Être présent(e) le jour J. Prévenir 24h à l'avance en cas d'empêchement." },
+            { name: 'Annulation & Retard', details: "Être présent(e) le jour J. Prévenir 48h à l'avance en cas d'empêchement." },
         ]
     }
 ];
@@ -81,7 +84,6 @@ export const GALLERY_IMAGES = [
   getAssetUrl('port4.png'),
   getAssetUrl('port5.png'),
   getAssetUrl('port6.png'),
-  getAssetUrl('port7.png'),
 ];
 
 export const NAV_LINKS = [

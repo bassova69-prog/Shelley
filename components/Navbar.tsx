@@ -34,37 +34,14 @@ export const Navbar = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-greige/80 backdrop-blur-md border-b border-charcoal/10 py-3 shadow-sm' : 'bg-transparent py-5'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        {/* Logo Image */}
-        <a 
-            href="#home" 
-            onClick={(e) => handleNavClick(e, '#home')}
-            className="cursor-pointer hover:opacity-80 transition-opacity block relative group"
-        >
-          <div className="relative">
-             {/* Effet de lueur derrière le logo rond */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-orange-400 rounded-full blur opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
-             <img 
-                src={ASSETS.LOGO_URL} 
-                alt="Shelley Nails Logo" 
-                className="relative h-14 w-14 md:h-20 md:w-20 rounded-full object-cover border-2 border-white/50 shadow-md"
-             />
-          </div>
-        </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex justify-end items-center min-h-[80px]">
+        
+        {/* Logo supprimé de la Navbar pour ne pas rester fixe au scroll. Il est déplacé dans Hero. */}
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav - Reste à droite grâce au justify-end */}
         <div className="hidden md:flex items-center space-x-10">
-          {NAV_LINKS.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-xs uppercase tracking-[0.2em] font-medium text-charcoal/70 hover:text-charcoal transition-colors relative group cursor-pointer"
-            >
-              {link.name}
-              <span className="absolute -bottom-2 left-1/2 w-0 h-[1px] bg-charcoal transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-            </a>
-          ))}
+          
+          {/* Social Icons - Déplacés à gauche du sommaire */}
           <div className="flex items-center gap-4">
             <a 
               href={SOCIAL_LINKS.INSTAGRAM} 
@@ -85,9 +62,22 @@ export const Navbar = () => {
               </svg>
             </a>
           </div>
+
+          {NAV_LINKS.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm uppercase tracking-[0.2em] font-medium text-charcoal/70 hover:text-charcoal transition-colors relative group cursor-pointer"
+            >
+              {link.name}
+              <span className="absolute -bottom-2 left-1/2 w-0 h-[1px] bg-charcoal transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            </a>
+          ))}
+          
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Reste à droite grâce au justify-end */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-charcoal hover:opacity-70 transition-colors"

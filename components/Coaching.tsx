@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
-import { GraduationCap, Mail, Send, X, Loader2, Check, Copy, ExternalLink } from 'lucide-react';
+import { GraduationCap, Mail, Send, X, Loader2, Check, Copy, ExternalLink, ChevronDown } from 'lucide-react';
+import { ASSETS } from '../constants';
 
 export const Coaching = () => {
   const [showForm, setShowForm] = useState(false);
+  const [showProgram, setShowProgram] = useState(false);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    level: 'Débutant',
     message: ''
   });
 
   // Lien classique pour Outlook, Apple Mail, iPhone
   const generateMailtoLink = () => {
-    const subject = encodeURIComponent(`Demande de Coaching - ${formData.level} - ${formData.name}`);
+    const subject = encodeURIComponent(`Demande de Coaching - ${formData.name}`);
     const body = encodeURIComponent(
-      `Nom: ${formData.name}\nEmail: ${formData.email}\nNiveau souhaité: ${formData.level}\n\nMessage / Disponibilités :\n${formData.message}`
+      `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage / Disponibilités :\n${formData.message}`
     );
     return `mailto:shelley.gervais88@gmail.com?subject=${subject}&body=${body}`;
   };
 
   // Lien spécifique pour ouvrir Gmail dans le navigateur
   const generateGmailLink = () => {
-    const subject = encodeURIComponent(`Demande de Coaching - ${formData.level} - ${formData.name}`);
+    const subject = encodeURIComponent(`Demande de Coaching - ${formData.name}`);
     const body = encodeURIComponent(
-      `Nom: ${formData.name}\nEmail: ${formData.email}\nNiveau souhaité: ${formData.level}\n\nMessage / Disponibilités :\n${formData.message}`
+      `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage / Disponibilités :\n${formData.message}`
     );
     // URL magique de Google pour composer un message
     return `https://mail.google.com/mail/?view=cm&fs=1&to=shelley.gervais88@gmail.com&su=${subject}&body=${body}`;
@@ -51,7 +52,6 @@ export const Coaching = () => {
       setFormData({
         name: '',
         email: '',
-        level: 'Débutant',
         message: ''
       });
       setShowForm(false);
@@ -59,13 +59,7 @@ export const Coaching = () => {
 
   return (
     <section id="coaching" className="py-24 relative flex items-center justify-center overflow-hidden">
-       {/* Abstract Background Element */}
-       <div className="absolute top-0 right-0 opacity-10 pointer-events-none translate-x-1/3 -translate-y-1/3">
-            <svg width="400" height="400" viewBox="0 0 100 100" className="text-charcoal animate-[spin_60s_linear_infinite]">
-                <path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="currentColor"/>
-            </svg>
-       </div>
-
+       
        <div className="max-w-5xl w-full px-6 relative z-10">
           {/* The Cartouche Container */}
           <div className="relative group">
@@ -99,32 +93,36 @@ export const Coaching = () => {
                 </h3>
 
                 <p className="font-sans text-sm md:text-base max-w-lg mx-auto text-charcoal/70 leading-relaxed mb-10">
-                   Plonge dans l'univers du <span className="font-bold text-charcoal">Nail Art</span> avec mes sessions de coaching personnalisé à Créteil (ou en ligne). J'analyse ta technique de pose de gel, corrige tes gestes de prothésiste ongulaire et t'apprends mes designs signature et techniques de décoration avancées. Un moment privilégié pour perfectionner ton savoir-faire et développer ton propre style professionnel.
+                   Plonge dans l'univers du <span className="font-bold text-charcoal">Nail Art</span> avec mes sessions de coaching personnalisé à Créteil. J'analyse ta technique de pose de gel, corrige tes gestes de prothésiste ongulaire et t'apprends mes designs signature et techniques de décoration avancées. Un moment privilégié pour perfectionner ton savoir-faire et développer ton propre style professionnel.
                 </p>
 
-                {/* Modules Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mb-10 relative z-10 items-stretch text-left">
-                    <div className="bg-white/40 p-6 rounded-2xl border border-white/50 hover:bg-white/60 transition-colors flex flex-col justify-start">
-                        <span className="block font-gothic text-2xl mb-2 text-charcoal">01</span>
-                        <h4 className="font-bold text-xs uppercase tracking-wider mb-2 text-center md:text-left">Débutant</h4>
-                        <p className="text-[11px] text-charcoal/70 font-medium leading-relaxed">
-                            Accents discrets, french manucure ou boucles souples.
-                        </p>
-                    </div>
-                    <div className="bg-white/40 p-6 rounded-2xl border border-white/50 hover:bg-white/60 transition-colors flex flex-col justify-start">
-                        <span className="block font-gothic text-2xl mb-2 text-charcoal">02</span>
-                        <h4 className="font-bold text-xs uppercase tracking-wider mb-2 text-center md:text-left">Confirmé</h4>
-                        <p className="text-[11px] text-charcoal/70 font-medium leading-relaxed">
-                            Plus de détails : pensez art abstrait, motifs superposés ou finitions chromées.
-                        </p>
-                    </div>
-                    <div className="bg-white/40 p-6 rounded-2xl border border-white/50 hover:bg-white/60 transition-colors flex flex-col justify-start">
-                        <span className="block font-gothic text-2xl mb-2 text-charcoal">03</span>
-                        <h4 className="font-bold text-xs uppercase tracking-wider mb-2 text-center md:text-left">Expert</h4>
-                        <p className="text-[11px] text-charcoal/70 font-medium leading-relaxed">
-                            Poses complètes et audacieuses avec breloques 3D, motifs peints à la main ou textures variées.
-                            <br/><span className="block mt-2 opacity-60 italic">Utilisation d’un gel de haute qualité et d’extensions structurées conçues pour durer.</span>
-                        </p>
+                {/* Programme Cartouche Accordéon */}
+                <div className="w-full max-w-3xl mx-auto mb-10 relative z-10 text-left">
+                    <button 
+                        onClick={() => setShowProgram(!showProgram)}
+                        className="w-full bg-white/40 backdrop-blur-md p-6 md:p-8 rounded-2xl border border-white/50 shadow-sm hover:bg-white/50 hover:shadow-md transition-all flex items-center justify-between group"
+                    >
+                        <div>
+                            <span className="font-gothic text-3xl text-charcoal block mb-1">Programme</span>
+                            <span className="text-xs uppercase tracking-widest text-charcoal/60 group-hover:text-charcoal transition-colors">
+                                Cliquez pour découvrir le contenu
+                            </span>
+                        </div>
+                        
+                        <div className={`w-12 h-12 rounded-full bg-white border border-charcoal/10 flex items-center justify-center text-charcoal transition-all duration-500 group-hover:border-charcoal/30 ${showProgram ? 'rotate-180 bg-charcoal text-white' : ''}`}>
+                             <ChevronDown size={20} />
+                        </div>
+                    </button>
+
+                    <div className={`overflow-hidden transition-all duration-700 ease-in-out ${showProgram ? 'max-h-[3000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                        <div className="rounded-2xl overflow-hidden shadow-lg border border-white/50 bg-white/20 relative">
+                            {/* NOTE: Marges négatives pour rogner le haut (titre) et le bas de l'image */}
+                            <img 
+                                src={ASSETS.PROGRAM} 
+                                alt="Programme de formation" 
+                                className="w-full h-auto object-cover -mt-[25%] -mb-[15%]" 
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -228,20 +226,6 @@ export const Coaching = () => {
                                 </div>
 
                                 <div>
-                                    <label className="block text-[10px] uppercase font-bold text-charcoal/60 mb-1">Niveau souhaité</label>
-                                    <select 
-                                        value={formData.level}
-                                        onChange={(e) => setFormData({...formData, level: e.target.value})}
-                                        className="w-full bg-white/50 border border-charcoal/10 rounded-lg p-3 text-sm focus:outline-none focus:border-charcoal/40 text-charcoal"
-                                        disabled={status === 'submitting'}
-                                    >
-                                        <option value="Débutant">Niveau 01 - Débutant</option>
-                                        <option value="Confirmé">Niveau 02 - Confirmé</option>
-                                        <option value="Expert">Niveau 03 - Expert</option>
-                                    </select>
-                                </div>
-
-                                <div>
                                     <label className="block text-[10px] uppercase font-bold text-charcoal/60 mb-1">Message</label>
                                     <textarea 
                                         required
@@ -273,11 +257,6 @@ export const Coaching = () => {
                         )}
                     </div>
                 )}
-
-                {/* Bottom Signature */}
-                <div className="mt-8 opacity-80 font-logo text-blade-effect text-3xl">
-                    Shelley Nails Academy
-                </div>
             </div>
           </div>
        </div>

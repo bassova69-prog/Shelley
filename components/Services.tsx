@@ -5,13 +5,7 @@ import { SERVICE_CATEGORIES } from '../constants';
 export const Services = () => {
   return (
     <section id="services" className="py-24 relative overflow-hidden">
-        {/* Soft Background Tribal Shadow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03] pointer-events-none">
-             <svg viewBox="0 0 200 200" fill="currentColor" className="w-full h-full text-black">
-                <path d="M100,0 C120,80 180,100 200,100 C180,120 120,200 100,200 C80,120 20,100 0,100 C20,80 80,0 100,0 Z" />
-             </svg>
-        </div>
-
+        
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
         {/* Header - Modified to just 'Tarifs' in Serif */}

@@ -19,7 +19,7 @@ const FAQ_DATA = [
     },
     {
         question: "Combien de temps dure une prestation ?",
-        answer: "Le temps varie selon la complexité : \n- Pose Gelx simple : env. 1h15\n- Remplissage avec Nail Art : 1h45 à 2h15\n- Pose artistique complexe : jusqu'à 3h.\nLa qualité demande de la précision !",
+        answer: "Le temps varie selon la complexité : \n- Pose Gelx simple : env. 1h30\n- Remplissage avec Nail Art : 1h45 à 2h15\n- Pose artistique complexe : jusqu'à 3h.\nLa qualité demande de la précision !",
         icon: Sparkles
     },
     {
