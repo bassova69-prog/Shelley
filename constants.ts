@@ -25,7 +25,7 @@ export const ASSETS = {
 
 export const SOCIAL_LINKS = {
   INSTAGRAM: "https://www.instagram.com/shelleynailss/",
-  TIKTOK: "https://www.tiktok.com/@shel",
+  TIKTOK: "https://www.tiktok.com/@shelleynailss",
   BOOKING: "https://www.instagram.com/direct/t/109840043746601/",
   REVIEWS: "https://g.page/r/CVgGwCIwC6D5EBI/review"
 };
