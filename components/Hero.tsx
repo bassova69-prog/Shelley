@@ -3,7 +3,8 @@ import { ASSETS } from '../constants';
 
 export const Hero = () => {
   return (
-    <div id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    // Utilisation de 100dvh (dynamic viewport height) pour une compatibilité parfaite mobile
+    <div id="home" className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center">
       
       {/* Central Content */}
       <div className="relative z-10 flex flex-col items-center justify-center w-full text-center">

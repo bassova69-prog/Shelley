@@ -25,11 +25,12 @@ export const Services = () => {
                     <ul className="space-y-6">
                         {cat.items.map((item, itemIdx) => (
                             <li key={itemIdx} className="group">
-                                <div className="flex justify-between items-baseline mb-1">
+                                {/* Ajout de gap-4 pour empêcher le prix de toucher le nom sur mobile */}
+                                <div className="flex justify-between items-baseline mb-1 gap-4">
                                     <span className="font-serif font-bold text-charcoal text-lg group-hover:underline decoration-1 underline-offset-4 decoration-charcoal/30">
                                         {item.name}
                                     </span>
-                                    <span className="font-sans font-medium text-charcoal/80 text-base whitespace-nowrap ml-4">
+                                    <span className="font-sans font-medium text-charcoal/80 text-base whitespace-nowrap">
                                         {item.price ? `${item.price}€` : 'Sur Devis'}
                                     </span>
                                 </div>

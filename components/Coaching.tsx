@@ -116,11 +116,11 @@ export const Coaching = () => {
 
                     <div className={`overflow-hidden transition-all duration-700 ease-in-out ${showProgram ? 'max-h-[3000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                         <div className="rounded-2xl overflow-hidden shadow-lg border border-white/50 bg-white/20 relative">
-                            {/* NOTE: Marges négatives pour rogner le haut (titre) et le bas de l'image */}
+                            {/* NOTE: Marges négatives ajustées pour mobile et desktop */}
                             <img 
                                 src={ASSETS.PROGRAM} 
                                 alt="Programme de formation" 
-                                className="w-full h-auto object-cover -mt-[25%] -mb-[15%]" 
+                                className="w-full h-auto object-cover -mt-[10%] -mb-[5%] md:-mt-[25%] md:-mb-[15%]" 
                             />
                         </div>
                     </div>
@@ -139,7 +139,7 @@ export const Coaching = () => {
                     <div className="relative z-20 max-w-lg mx-auto bg-white/60 backdrop-blur-xl p-6 rounded-2xl border border-white shadow-xl animate-in fade-in slide-in-from-bottom-4">
                         <button 
                             onClick={() => setShowForm(false)}
-                            className="absolute top-4 right-4 text-charcoal/40 hover:text-charcoal transition-colors"
+                            className="absolute top-4 right-4 text-charcoal/40 hover:text-charcoal transition-colors p-2"
                         >
                             <X size={20} />
                         </button>

@@ -30,10 +30,10 @@ export const Gallery = () => {
                 loading="lazy"
               />
               
-              {/* Overlay with Sharp Text */}
+              {/* Overlay with Sharp Text - Responsive text size for mobile */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 bg-white/20 backdrop-blur-[2px]">
                  <div className="w-full h-full border-[10px] border-greige/30 flex items-center justify-center">
-                    <span className="font-gothic text-3xl text-charcoal font-blade tracking-widest drop-shadow-md">0{idx + 1}</span>
+                    <span className="font-gothic text-xl md:text-3xl text-charcoal font-blade tracking-widest drop-shadow-md">0{idx + 1}</span>
                  </div>
               </div>
             </div>

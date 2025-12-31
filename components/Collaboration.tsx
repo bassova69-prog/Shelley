@@ -111,14 +111,14 @@ export const Collaboration: React.FC = () => {
 
                             <form onSubmit={handleCollabSubmit} className="space-y-6">
                                 
-                                {/* Type Selector */}
-                                <div className="flex bg-white/40 p-1.5 rounded-2xl border border-white/50">
+                                {/* Type Selector - Ajout de flex-wrap pour les petits écrans */}
+                                <div className="flex flex-wrap md:flex-nowrap bg-white/40 p-1.5 rounded-2xl border border-white/50">
                                     {['Marque', 'Evénement', 'Projet'].map(type => (
                                         <button 
                                             key={type}
                                             type="button"
                                             onClick={() => setCollabForm({...collabForm, type: type})}
-                                            className={`flex-1 py-3 text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 ${collabForm.type === type ? 'bg-charcoal text-white shadow-md' : 'text-charcoal/40 hover:text-charcoal hover:bg-white/40'}`}
+                                            className={`flex-1 py-3 px-2 text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 whitespace-nowrap ${collabForm.type === type ? 'bg-charcoal text-white shadow-md' : 'text-charcoal/40 hover:text-charcoal hover:bg-white/40'}`}
                                         >
                                             {type}
                                         </button>
