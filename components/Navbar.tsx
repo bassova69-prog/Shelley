@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Instagram } from 'lucide-react';
+import { Menu, X, Instagram, Star } from 'lucide-react';
 import { NAV_LINKS, SOCIAL_LINKS, ASSETS } from '../constants';
 
 export const Navbar = () => {
@@ -61,6 +61,15 @@ export const Navbar = () => {
                 <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
               </svg>
             </a>
+            <a 
+              href={SOCIAL_LINKS.REVIEWS} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-charcoal hover:text-charcoal/60 transition-all"
+              title="Laisser un avis"
+            >
+              <Star size={18} />
+            </a>
           </div>
 
           {NAV_LINKS.map((link) => (
@@ -108,6 +117,7 @@ export const Navbar = () => {
                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                 </svg>
               </a>
+              <a href={SOCIAL_LINKS.REVIEWS} className="text-charcoal" title="Laisser un avis"><Star size={24} /></a>
           </div>
         </div>
       </div>
