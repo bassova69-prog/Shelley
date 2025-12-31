@@ -16,6 +16,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     
+    <!-- Script de nettoyage pour forcer la mise à jour sur Mobile (Android/iOS) -->
+    <script>
+      // Si un Service Worker fantôme existe, on le force à se désinscrire pour éviter le cache persistant
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+            console.log('Service Worker désinscrit pour forcer la MAJ');
+          }
+        });
+      }
+    </script>
+    
     <!-- Données structurées Schema.org pour le référencement local -->
     <script type="application/ld+json">
     {
