@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { SERVICE_CATEGORIES } from '../constants';
+import { SERVICE_CATEGORIES, ASSETS } from '../constants';
 
 export const Services = () => {
   return (
@@ -8,7 +8,7 @@ export const Services = () => {
         
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
-        {/* Header - Modified to just 'Tarifs' in Serif */}
+        {/* Header */}
         <div className="text-center mb-16 relative">
           <div className="bg-charcoal/10 absolute inset-0 blur-3xl rounded-full transform scale-75 opacity-30"></div>
           <h2 className="font-serif italic font-medium text-6xl md:text-8xl text-charcoal relative z-10 drop-shadow-md tracking-tight">
@@ -16,60 +16,49 @@ export const Services = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-            
-            {/* Pricing Categories */}
-            {SERVICE_CATEGORIES.filter(cat => cat.type === 'pricing').map((cat, idx) => (
-                <div key={idx} className="bg-white/30 backdrop-blur-sm p-8 rounded-2xl border border-white/40 shadow-sm hover:bg-white/40 transition-colors">
-                    <h3 className="font-gothic text-3xl text-charcoal mb-8 border-b border-charcoal/10 pb-4">{cat.category}</h3>
-                    <ul className="space-y-6">
+        {/* IMAGE TARIFS 
+            - Rétablissement du crop demandé initialement.
+            - Haut : -mt-[28%] 
+            - Bas : -mb-[10%]
+        */}
+        <div className="w-full mb-12 flex justify-center">
+            <div className="relative group rounded-2xl overflow-hidden shadow-2xl border border-white/40 bg-white/30 backdrop-blur-sm transform hover:scale-[1.01] transition-transform duration-500">
+                <img 
+                    src={ASSETS.PRICING} 
+                    alt="Carte des tarifs Shelley Nails" 
+                    className="w-full h-auto object-contain max-w-4xl -mt-[28%] -mb-[10%]" 
+                    loading="lazy"
+                />
+            </div>
+        </div>
+
+        {/* Info Categories (Restent en dessous) */}
+        <div className="grid md:grid-cols-2 gap-8 mt-8">
+                {SERVICE_CATEGORIES.filter(cat => cat.type === 'info').map((cat, idx) => (
+                <div key={idx} className="bg-charcoal text-greige p-8 rounded-2xl border border-charcoal shadow-lg relative overflow-hidden group">
+                    {/* Decorative background element for cards */}
+                    <div className="absolute -right-10 -bottom-10 opacity-10 transform rotate-12 group-hover:rotate-0 transition-transform duration-700">
+                            <span className="font-gothic text-9xl text-white">S</span>
+                    </div>
+
+                    <h3 className="font-gothic text-2xl mb-4 text-white/90 relative z-10">{cat.category}</h3>
+                        <ul className="space-y-4 relative z-10">
                         {cat.items.map((item, itemIdx) => (
-                            <li key={itemIdx} className="group">
-                                {/* Ajout de gap-4 pour empêcher le prix de toucher le nom sur mobile */}
-                                <div className="flex justify-between items-baseline mb-1 gap-4">
-                                    <span className="font-serif font-bold text-charcoal text-lg group-hover:underline decoration-1 underline-offset-4 decoration-charcoal/30">
-                                        {item.name}
-                                    </span>
-                                    <span className="font-sans font-medium text-charcoal/80 text-base whitespace-nowrap">
-                                        {item.price ? `${item.price}€` : 'Sur Devis'}
-                                    </span>
-                                </div>
-                                <p className="text-xs text-charcoal/60 font-sans italic">{item.details}</p>
+                            <li key={itemIdx}>
+                                {item.name && item.name !== cat.category && (
+                                    <h4 className="font-bold text-sm uppercase tracking-wider mb-2 text-greige-dark">{item.name}</h4>
+                                )}
+                                <p className="text-sm font-sans leading-relaxed text-greige/80 mb-3">{item.details}</p>
+                                {item.action && (
+                                    <a href={item.action.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-greige/30 pb-1 hover:border-greige transition-colors text-white">
+                                        {item.action.label} <ArrowUpRight size={12}/>
+                                    </a>
+                                )}
                             </li>
                         ))}
                     </ul>
                 </div>
-            ))}
-
-            {/* Info Categories */}
-            <div className="md:col-span-2 grid md:grid-cols-2 gap-8 mt-4">
-                 {SERVICE_CATEGORIES.filter(cat => cat.type === 'info').map((cat, idx) => (
-                    <div key={idx} className="bg-charcoal text-greige p-8 rounded-2xl border border-charcoal shadow-lg relative overflow-hidden group">
-                        {/* Decorative background element for cards */}
-                        <div className="absolute -right-10 -bottom-10 opacity-10 transform rotate-12 group-hover:rotate-0 transition-transform duration-700">
-                             <span className="font-gothic text-9xl text-white">S</span>
-                        </div>
-
-                        <h3 className="font-gothic text-2xl mb-4 text-white/90 relative z-10">{cat.category}</h3>
-                         <ul className="space-y-4 relative z-10">
-                            {cat.items.map((item, itemIdx) => (
-                                <li key={itemIdx}>
-                                    {item.name && item.name !== cat.category && (
-                                        <h4 className="font-bold text-sm uppercase tracking-wider mb-2 text-greige-dark">{item.name}</h4>
-                                    )}
-                                    <p className="text-sm font-sans leading-relaxed text-greige/80 mb-3">{item.details}</p>
-                                    {item.action && (
-                                        <a href={item.action.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-greige/30 pb-1 hover:border-greige transition-colors text-white">
-                                            {item.action.label} <ArrowUpRight size={12}/>
-                                        </a>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                 ))}
-            </div>
-
+                ))}
         </div>
 
       </div>

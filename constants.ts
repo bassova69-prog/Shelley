@@ -19,8 +19,11 @@ export const ASSETS = {
   
   LOGO_PLACEHOLDER: getAssetUrl('logo.webp'),
 
-  // Programme Coaching
-  PROGRAM: getAssetUrl('programme.webp'),
+  // Programme Coaching (Mise à jour vers le fichier PNG)
+  PROGRAM: getAssetUrl('Programme.png'),
+
+  // Carte des tarifs
+  PRICING: getAssetUrl('tarif.png'),
 };
 
 export const SOCIAL_LINKS = {

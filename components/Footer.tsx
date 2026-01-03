@@ -11,8 +11,9 @@ export const Footer = () => {
             <a href={SOCIAL_LINKS.TIKTOK} className="hover:opacity-50 transition-opacity uppercase tracking-wider">TikTok</a>
             <a href="mailto:contact@shelleynails.com" className="hover:opacity-50 transition-opacity uppercase tracking-wider">Email</a>
         </div>
-        <p className="text-[10px] uppercase tracking-widest opacity-40">
-          © {new Date().getFullYear()} Shelley Nails • Paris • v1.0.75
+        {/* Suppression de l'opacité et mise en gras pour confirmer visuellement la MAJ sur mobile */}
+        <p className="text-xs font-bold uppercase tracking-widest text-charcoal">
+          © {new Date().getFullYear()} Shelley Nails • v1.0.86 • MAJ OK
         </p>
       </div>
     </footer>

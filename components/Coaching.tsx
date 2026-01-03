@@ -116,11 +116,11 @@ export const Coaching = () => {
 
                     <div className={`overflow-hidden transition-all duration-700 ease-in-out ${showProgram ? 'max-h-[3000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                         <div className="rounded-2xl overflow-hidden shadow-lg border border-white/50 bg-white/20 relative">
-                            {/* NOTE: Marges négatives ajustées pour mobile et desktop */}
+                            {/* NOTE: Suppression des marges négatives pour afficher l'image entière */}
                             <img 
                                 src={ASSETS.PROGRAM} 
                                 alt="Programme de formation" 
-                                className="w-full h-auto object-cover -mt-[10%] -mb-[5%] md:-mt-[25%] md:-mb-[15%]" 
+                                className="w-full h-auto object-contain" 
                             />
                         </div>
                     </div>
