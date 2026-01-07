@@ -13,7 +13,7 @@ export const Footer = () => {
         </div>
         {/* Suppression de l'opacité et mise en gras pour confirmer visuellement la MAJ sur mobile */}
         <p className="text-xs font-bold uppercase tracking-widest text-charcoal">
-          © {new Date().getFullYear()} Shelley Nails • v1.0.86 • MAJ OK
+          © {new Date().getFullYear()} Shelley Nails • v1.0.88 • MAJ OK
         </p>
       </div>
     </footer>
